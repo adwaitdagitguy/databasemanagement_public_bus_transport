@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Options</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            border: 2px solid #333;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            text-align: center;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Staff Options</h1>
+        <button onclick="location.href='/update_journey_status'">Bus Journey Update</button>
+        <button onclick="location.href='/insert_maintenance_record'">Insertion into Maintenance Records</button>
+        <button onclick="location.href='/read_ticketing_data'">Read Ticketing Data</button>    </div>
+    <br>
+        <button onclick="window.location.href='/form'">Back to TMT Page</button>
+
+</body>
+</html>

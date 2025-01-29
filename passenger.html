@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passenger Options</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            border: 2px solid #333;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            text-align: center;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Passenger Options</h1>
+        <button onclick="location.href='/book_ticket'">Book Ticket</button>
+        <button onclick="location.href='/check_ticket'">Check Ticket</button>
+        <button onclick="location.href='/find_bus'">Find Bus</button>
+        <button onclick="location.href='/give_feedback'">Give Feedback</button>
+    </div>
+    <br>
+    <button onclick="window.location.href='/form'">Back to TMT Page</button>
+</body>
+</html>

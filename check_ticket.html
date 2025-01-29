@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Ticket</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result, .error {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            margin-top: 20px;
+        }
+        .result strong {
+            color: #333;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border-color: #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Check Ticket</h1>
+        <form method="POST" action="/check_ticket">
+            <label for="ticketID">Enter Ticket ID:</label>
+            <input type="text" id="ticketID" name="ticketID" required>
+            <button type="submit">Check Ticket</button>
+        </form>
+        
+        {% if ticket_details %}
+        <div class="result">
+            <h2>Ticket Details</h2>
+            <p><strong>Ticket ID:</strong> {{ ticket_details.TicketID }}</p>
+            <p><strong>Ticket Type:</strong> {{ ticket_details.TicketType }}</p>
+            <p><strong>Start Stop:</strong> {{ ticket_details.StartStopName }}</p>
+            <p><strong>End Stop:</strong> {{ ticket_details.EndStopName }}</p>
+            <p><strong>Distance:</strong> {{ ticket_details.Distance }} km</p>
+            <p><strong>Price:</strong> Rs {{ ticket_details.Price }}</p>
+            <p><strong>Bus ID:</strong> {{ ticket_details.busID }}</p>
+            <p><strong>Journey Status:</strong> {{ ticket_details.journeyStatus }}</p>
+            <p><strong>Date and Time:</strong> {{ ticket_details.DateAndTime }}</p>
+        </div>
+        {% elif error %}
+        <div class="error">{{ error }}</div>
+        {% endif %}
+    </div>
+    <br>
+    <button onclick="window.location.href='/passenger'">Back to Passenger Options</button>
+</body>
+</html>

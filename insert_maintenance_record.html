@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Maintenance Record</title>
+</head>
+<body>
+    <h1>Insert Maintenance Record</h1>
+
+    <!-- Display the response message (success/error) -->
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+
+    <form action="{{ url_for('insert_maintenance_record') }}" method="POST">
+        <label for="maintenanceId">Maintenance ID:</label>
+        <input type="number" id="maintenanceId" name="maintenanceId" required><br><br>
+
+        <label for="cost">Cost:</label>
+        <input type="number" id="cost" name="cost" required><br><br>
+
+        <label for="dateOfRecentMaintenance">Date of Recent Maintenance:</label>
+        <input type="date" id="dateOfRecentMaintenance" name="dateOfRecentMaintenance" value="2024-12-13" required><br><br>
+
+        <label for="busCondition">Bus Condition:</label>
+        <input type="text" id="busCondition" name="busCondition" required><br><br>
+
+        <label for="BusId">Bus ID:</label>
+        <input type="text" id="BusId" name="BusId" required><br><br>
+
+        <button type="submit">Insert Maintenance Record</button>
+    </form>
+    <br>
+    <button onclick="window.location.href='/staff'">Back to Staff Options</button>
+</body>
+</html>

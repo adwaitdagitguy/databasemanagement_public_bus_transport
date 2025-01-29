@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Results</title>
+</head>
+<body>
+    <h1>Available Buses</h1>
+
+    {% if buses %}
+        {% for bus in buses %}
+            <h3>Bus ID: {{ bus['BusID'] }}</h3>
+            <p>Route ID: {{ bus['RouteID'] }}</p>
+            <p>Timings:</p>
+            <ul>
+                {% for time in bus['Timings'] %}
+                    <li>{{ time }}</li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    {% else %}
+        <p>No buses available for the selected route.</p>
+    {% endif %}
+</body>
+</html>

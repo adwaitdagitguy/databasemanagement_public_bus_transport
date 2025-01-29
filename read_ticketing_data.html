@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticketing Data Results</title>
+</head>
+<body>
+    <h1>Ticketing Data for Bus ID: {{ bus_id }} on {{ date }}</h1>
+
+    {% if tickets %}
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>TicketID</th>
+                    <th>TicketType</th>
+                    <th>StartStopName</th>
+                    <th>EndStopName</th>
+                    <th>Distance</th>
+                    <th>Price</th>
+                    <th>DateAndTime</th>
+                    <th>busID</th>
+                    <th>ticketMode</th>
+                    <th>RouteId</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ticket in tickets %}
+                    <tr>
+                        <td>{{ ticket[0] }}</td>
+                        <td>{{ ticket[1] }}</td>
+                        <td>{{ ticket[2] }}</td>
+                        <td>{{ ticket[3] }}</td>
+                        <td>{{ ticket[4] }}</td>
+                        <td>{{ ticket[5] }}</td>
+                        <td>{{ ticket[6] }}</td>
+                        <td>{{ ticket[7] }}</td>
+                        <td>{{ ticket[8] }}</td>
+                        <td>{{ ticket[9] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No ticketing data found for the specified Bus ID and Date.</p>
+    {% endif %}
+
+    <!-- Back Button -->
+    <br>
+    <button onclick="window.location.href='/staff'">Back to Staff Options</button>
+</body>
+</html>

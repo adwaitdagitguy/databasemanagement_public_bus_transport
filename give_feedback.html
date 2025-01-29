@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Give Feedback</title>
+</head>
+<body>
+    <h1>Give Feedback</h1>
+    <form action="{{ url_for('give_feedback') }}" method="POST">
+        <label for="ticketID">Ticket ID:</label>
+        <input type="number" id="ticketID" name="ticketID" required><br><br>
+
+        <label for="busID">Bus ID:</label>
+        <input type="text" id="busID" name="busID" required><br><br>
+
+        <label for="serviceFeedback">Service Feedback:</label><br>
+        <textarea id="serviceFeedback" name="serviceFeedback" rows="4" cols="50"></textarea><br><br>
+
+        <label for="overallFeedback">Overall Feedback:</label><br>
+        <textarea id="overallFeedback" name="overallFeedback" rows="4" cols="50"></textarea><br><br>
+
+        <label for="rating">Rating (out of 5):</label>
+        <input type="number" id="rating" name="rating" min="1" max="5" required><br><br>
+
+        <label for="passengerName">Passenger Name:</label>
+        <input type="text" id="passengerName" name="passengerName" required><br><br>
+
+        <label for="contactNumber">Contact Number:</label>
+        <input type="text" id="contactNumber" name="contactNumber"><br><br>
+
+        <input type="submit" value="Submit Feedback">
+    </form>
+
+    <br>
+    <a href="/passenger">Back to Passenger Options</a>
+</body>
+</html>

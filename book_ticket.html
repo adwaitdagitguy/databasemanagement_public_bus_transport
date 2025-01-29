@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Ticket</title>
+</head>
+<body>
+    <h1>Book a Ticket</h1>
+    <form action="/book_ticket" method="POST">
+        <label for="ticketType">Ticket Type:</label>
+        <select id="ticketType" name="ticketType">
+            <option value="Regular">Regular</option>
+            <option value="Senior">Senior</option>
+            <option value="Female">Female</option>
+        </select>
+        <br><br>
+
+        <label for="startStopName">Start Stop Name:</label>
+        <input type="text" id="startStopName" name="startStopName" required>
+        <br><br>
+
+        <label for="endStopName">End Stop Name:</label>
+        <input type="text" id="endStopName" name="endStopName" required>
+        <br><br>
+
+        <label for="busID">Bus ID:</label>
+        <input type="text" id="busID" name="busID" required>
+        <br><br>
+
+        <label for="ticketMode">Ticket Mode:</label>
+        <select id="ticketMode" name="ticketMode">
+            <option value="Online">Online</option>
+            <option value="IssuedByStaff">Issued By Staff</option>
+        </select>
+        <br><br>
+
+        <label for="routeID">Route ID:</label>
+        <input type="number" id="routeID" name="routeID" required>
+        <br><br>
+
+        <button type="submit">Book Ticket</button>
+    </form>
+</body>
+</html>

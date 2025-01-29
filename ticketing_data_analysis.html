@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticketing Data Analysis</title>
+</head>
+<body>
+    <h1>Ticketing Data Analysis</h1>
+    <table border="1">
+        <tr>
+            <th>Route ID</th>
+            <th>Route Name</th>
+            <th>Total Tickets Sold</th>
+            <th>Total Revenue</th>
+        </tr>
+        {% for row in ticket_sales %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <button onclick="location.href='/authority'">Back</button>
+</body>
+</html>
